@@ -1,16 +1,13 @@
-2025-07-06 13:08:35,230 - __main__ - INFO - 'flashcards_state.json' not found or corrupted. Attempting initial load from 'words.xlsx'.
-2025-07-06 13:08:41,032 - excel_loader - INFO - Successfully loaded 'words.xlsx' into a DataFrame.
-2025-07-06 13:08:41,032 - excel_loader - INFO - --- First 5 rows of the DataFrame ---
-2025-07-06 13:08:41,101 - excel_loader - INFO - 
+2025-07-06 16:33:52,081 - excel_loader - INFO - Successfully loaded 'words.xlsx' into a DataFrame.
+2025-07-06 16:33:52,081 - excel_loader - INFO - --- First 3 rows of the DataFrame ---
+2025-07-06 16:33:52,094 - excel_loader - INFO - 
 | number   | Chinese   | Pinyin   | English        |
 |:---------|:----------|:---------|:---------------|
 | 1        | 只（量词）     | zhī      | (measure word) |
 | 2        | 一会儿       | yíhuìr   | a while        |
 | 3        | 关于        | guānyú   | about          |
-| 4        | 根据        | gēnjù    | according to   |
-| 5        | 成绩        | chéngjì  | achievement    |
-2025-07-06 13:08:41,102 - excel_loader - INFO - --- DataFrame Information (Columns and Data Types) ---
-2025-07-06 13:08:41,202 - excel_loader - INFO - <class 'pandas.core.frame.DataFrame'>
+2025-07-06 16:33:52,095 - excel_loader - INFO - --- DataFrame Information (Columns and Data Types) ---
+2025-07-06 16:33:52,142 - excel_loader - INFO - <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 1033 entries, 0 to 1032
 Data columns (total 4 columns):
  #   Column   Non-Null Count  Dtype 
@@ -22,9 +19,298 @@ Data columns (total 4 columns):
 dtypes: int64(1), object(3)
 memory usage: 32.4+ KB
 
-2025-07-06 13:08:41,238 - __main__ - INFO - Initial load from Excel completed. 1033 cards created.
-2025-07-06 13:10:43,185 - __main__ - INFO - 
+2025-07-06 16:33:52,143 - __main__ - INFO - 'flashcards_state.json' not found. Starting with all cards 'New' and session 0.
+2025-07-06 16:33:52,171 - __main__ - INFO - Final active cards in memory: 1033. Current session: 0
+2025-07-06 16:33:52,172 - __main__ - INFO - Using 4 words per slide as specified from command line.
+2025-07-06 16:33:52,221 - excel_loader - INFO - Successfully loaded 'words.xlsx' into a DataFrame.
+2025-07-06 16:33:52,221 - excel_loader - INFO - --- First 3 rows of the DataFrame ---
+2025-07-06 16:33:52,222 - excel_loader - INFO - 
+| number   | Chinese   | Pinyin   | English        |
+|:---------|:----------|:---------|:---------------|
+| 1        | 只（量词）     | zhī      | (measure word) |
+| 2        | 一会儿       | yíhuìr   | a while        |
+| 3        | 关于        | guānyú   | about          |
+2025-07-06 16:33:52,222 - excel_loader - INFO - --- DataFrame Information (Columns and Data Types) ---
+2025-07-06 16:33:52,224 - excel_loader - INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1033 entries, 0 to 1032
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   number   1033 non-null   int64 
+ 1   Chinese  1033 non-null   object
+ 2   Pinyin   1033 non-null   object
+ 3   English  1033 non-null   object
+dtypes: int64(1), object(3)
+memory usage: 32.4+ KB
+
+2025-07-06 16:33:58,119 - __main__ - INFO - Attempting to export data to PowerPoint: words_data.pptx
+2025-07-06 16:33:58,132 - excel_loader - INFO - Exporting 1033 rows across 259 slides, with 4 rows per slide.
+2025-07-06 16:33:58,134 - excel_loader - INFO - Added slide 1/259'
+2025-07-06 16:33:58,141 - excel_loader - INFO - Added slide 2/259'
+2025-07-06 16:33:58,146 - excel_loader - INFO - Added slide 3/259'
+2025-07-06 16:33:58,152 - excel_loader - INFO - Added slide 4/259'
+2025-07-06 16:33:58,158 - excel_loader - INFO - Added slide 5/259'
+2025-07-06 16:33:58,164 - excel_loader - INFO - Added slide 6/259'
+2025-07-06 16:33:58,169 - excel_loader - INFO - Added slide 7/259'
+2025-07-06 16:33:58,175 - excel_loader - INFO - Added slide 8/259'
+2025-07-06 16:33:58,181 - excel_loader - INFO - Added slide 9/259'
+2025-07-06 16:33:58,186 - excel_loader - INFO - Added slide 10/259'
+2025-07-06 16:33:58,192 - excel_loader - INFO - Added slide 11/259'
+2025-07-06 16:33:58,198 - excel_loader - INFO - Added slide 12/259'
+2025-07-06 16:33:58,203 - excel_loader - INFO - Added slide 13/259'
+2025-07-06 16:33:58,209 - excel_loader - INFO - Added slide 14/259'
+2025-07-06 16:33:58,215 - excel_loader - INFO - Added slide 15/259'
+2025-07-06 16:33:58,221 - excel_loader - INFO - Added slide 16/259'
+2025-07-06 16:33:58,227 - excel_loader - INFO - Added slide 17/259'
+2025-07-06 16:33:58,233 - excel_loader - INFO - Added slide 18/259'
+2025-07-06 16:33:58,239 - excel_loader - INFO - Added slide 19/259'
+2025-07-06 16:33:58,245 - excel_loader - INFO - Added slide 20/259'
+2025-07-06 16:33:58,250 - excel_loader - INFO - Added slide 21/259'
+2025-07-06 16:33:58,256 - excel_loader - INFO - Added slide 22/259'
+2025-07-06 16:33:58,263 - excel_loader - INFO - Added slide 23/259'
+2025-07-06 16:33:58,268 - excel_loader - INFO - Added slide 24/259'
+2025-07-06 16:33:58,274 - excel_loader - INFO - Added slide 25/259'
+2025-07-06 16:33:58,280 - excel_loader - INFO - Added slide 26/259'
+2025-07-06 16:33:58,286 - excel_loader - INFO - Added slide 27/259'
+2025-07-06 16:33:58,292 - excel_loader - INFO - Added slide 28/259'
+2025-07-06 16:33:58,298 - excel_loader - INFO - Added slide 29/259'
+2025-07-06 16:33:58,304 - excel_loader - INFO - Added slide 30/259'
+2025-07-06 16:33:58,310 - excel_loader - INFO - Added slide 31/259'
+2025-07-06 16:33:58,315 - excel_loader - INFO - Added slide 32/259'
+2025-07-06 16:33:58,321 - excel_loader - INFO - Added slide 33/259'
+2025-07-06 16:33:58,326 - excel_loader - INFO - Added slide 34/259'
+2025-07-06 16:33:58,331 - excel_loader - INFO - Added slide 35/259'
+2025-07-06 16:33:58,337 - excel_loader - INFO - Added slide 36/259'
+2025-07-06 16:33:58,343 - excel_loader - INFO - Added slide 37/259'
+2025-07-06 16:33:58,348 - excel_loader - INFO - Added slide 38/259'
+2025-07-06 16:33:58,354 - excel_loader - INFO - Added slide 39/259'
+2025-07-06 16:33:58,359 - excel_loader - INFO - Added slide 40/259'
+2025-07-06 16:33:58,364 - excel_loader - INFO - Added slide 41/259'
+2025-07-06 16:33:58,370 - excel_loader - INFO - Added slide 42/259'
+2025-07-06 16:33:58,375 - excel_loader - INFO - Added slide 43/259'
+2025-07-06 16:33:58,380 - excel_loader - INFO - Added slide 44/259'
+2025-07-06 16:33:58,386 - excel_loader - INFO - Added slide 45/259'
+2025-07-06 16:33:58,391 - excel_loader - INFO - Added slide 46/259'
+2025-07-06 16:33:58,397 - excel_loader - INFO - Added slide 47/259'
+2025-07-06 16:33:58,402 - excel_loader - INFO - Added slide 48/259'
+2025-07-06 16:33:58,408 - excel_loader - INFO - Added slide 49/259'
+2025-07-06 16:33:58,413 - excel_loader - INFO - Added slide 50/259'
+2025-07-06 16:33:58,419 - excel_loader - INFO - Added slide 51/259'
+2025-07-06 16:33:58,425 - excel_loader - INFO - Added slide 52/259'
+2025-07-06 16:33:58,430 - excel_loader - INFO - Added slide 53/259'
+2025-07-06 16:33:58,436 - excel_loader - INFO - Added slide 54/259'
+2025-07-06 16:33:58,441 - excel_loader - INFO - Added slide 55/259'
+2025-07-06 16:33:58,447 - excel_loader - INFO - Added slide 56/259'
+2025-07-06 16:33:58,452 - excel_loader - INFO - Added slide 57/259'
+2025-07-06 16:33:58,458 - excel_loader - INFO - Added slide 58/259'
+2025-07-06 16:33:58,464 - excel_loader - INFO - Added slide 59/259'
+2025-07-06 16:33:58,469 - excel_loader - INFO - Added slide 60/259'
+2025-07-06 16:33:58,475 - excel_loader - INFO - Added slide 61/259'
+2025-07-06 16:33:58,480 - excel_loader - INFO - Added slide 62/259'
+2025-07-06 16:33:58,486 - excel_loader - INFO - Added slide 63/259'
+2025-07-06 16:33:58,491 - excel_loader - INFO - Added slide 64/259'
+2025-07-06 16:33:58,497 - excel_loader - INFO - Added slide 65/259'
+2025-07-06 16:33:58,502 - excel_loader - INFO - Added slide 66/259'
+2025-07-06 16:33:58,508 - excel_loader - INFO - Added slide 67/259'
+2025-07-06 16:33:58,513 - excel_loader - INFO - Added slide 68/259'
+2025-07-06 16:33:58,519 - excel_loader - INFO - Added slide 69/259'
+2025-07-06 16:33:58,524 - excel_loader - INFO - Added slide 70/259'
+2025-07-06 16:33:58,530 - excel_loader - INFO - Added slide 71/259'
+2025-07-06 16:33:58,535 - excel_loader - INFO - Added slide 72/259'
+2025-07-06 16:33:58,541 - excel_loader - INFO - Added slide 73/259'
+2025-07-06 16:33:58,546 - excel_loader - INFO - Added slide 74/259'
+2025-07-06 16:33:58,552 - excel_loader - INFO - Added slide 75/259'
+2025-07-06 16:33:58,557 - excel_loader - INFO - Added slide 76/259'
+2025-07-06 16:33:58,563 - excel_loader - INFO - Added slide 77/259'
+2025-07-06 16:33:58,568 - excel_loader - INFO - Added slide 78/259'
+2025-07-06 16:33:58,574 - excel_loader - INFO - Added slide 79/259'
+2025-07-06 16:33:58,579 - excel_loader - INFO - Added slide 80/259'
+2025-07-06 16:33:58,585 - excel_loader - INFO - Added slide 81/259'
+2025-07-06 16:33:58,590 - excel_loader - INFO - Added slide 82/259'
+2025-07-06 16:33:58,596 - excel_loader - INFO - Added slide 83/259'
+2025-07-06 16:33:58,601 - excel_loader - INFO - Added slide 84/259'
+2025-07-06 16:33:58,607 - excel_loader - INFO - Added slide 85/259'
+2025-07-06 16:33:58,612 - excel_loader - INFO - Added slide 86/259'
+2025-07-06 16:33:58,618 - excel_loader - INFO - Added slide 87/259'
+2025-07-06 16:33:58,623 - excel_loader - INFO - Added slide 88/259'
+2025-07-06 16:33:58,629 - excel_loader - INFO - Added slide 89/259'
+2025-07-06 16:33:58,635 - excel_loader - INFO - Added slide 90/259'
+2025-07-06 16:33:58,640 - excel_loader - INFO - Added slide 91/259'
+2025-07-06 16:33:58,646 - excel_loader - INFO - Added slide 92/259'
+2025-07-06 16:33:58,651 - excel_loader - INFO - Added slide 93/259'
+2025-07-06 16:33:58,657 - excel_loader - INFO - Added slide 94/259'
+2025-07-06 16:33:58,663 - excel_loader - INFO - Added slide 95/259'
+2025-07-06 16:33:58,668 - excel_loader - INFO - Added slide 96/259'
+2025-07-06 16:33:58,674 - excel_loader - INFO - Added slide 97/259'
+2025-07-06 16:33:58,680 - excel_loader - INFO - Added slide 98/259'
+2025-07-06 16:33:58,685 - excel_loader - INFO - Added slide 99/259'
+2025-07-06 16:33:58,691 - excel_loader - INFO - Added slide 100/259'
+2025-07-06 16:33:58,697 - excel_loader - INFO - Added slide 101/259'
+2025-07-06 16:33:58,702 - excel_loader - INFO - Added slide 102/259'
+2025-07-06 16:33:58,710 - excel_loader - INFO - Added slide 103/259'
+2025-07-06 16:33:58,715 - excel_loader - INFO - Added slide 104/259'
+2025-07-06 16:33:58,721 - excel_loader - INFO - Added slide 105/259'
+2025-07-06 16:33:58,727 - excel_loader - INFO - Added slide 106/259'
+2025-07-06 16:33:58,732 - excel_loader - INFO - Added slide 107/259'
+2025-07-06 16:33:58,739 - excel_loader - INFO - Added slide 108/259'
+2025-07-06 16:33:58,746 - excel_loader - INFO - Added slide 109/259'
+2025-07-06 16:33:58,752 - excel_loader - INFO - Added slide 110/259'
+2025-07-06 16:33:58,758 - excel_loader - INFO - Added slide 111/259'
+2025-07-06 16:33:58,763 - excel_loader - INFO - Added slide 112/259'
+2025-07-06 16:33:58,769 - excel_loader - INFO - Added slide 113/259'
+2025-07-06 16:33:58,774 - excel_loader - INFO - Added slide 114/259'
+2025-07-06 16:33:58,780 - excel_loader - INFO - Added slide 115/259'
+2025-07-06 16:33:58,786 - excel_loader - INFO - Added slide 116/259'
+2025-07-06 16:33:58,791 - excel_loader - INFO - Added slide 117/259'
+2025-07-06 16:33:58,797 - excel_loader - INFO - Added slide 118/259'
+2025-07-06 16:33:58,803 - excel_loader - INFO - Added slide 119/259'
+2025-07-06 16:33:58,808 - excel_loader - INFO - Added slide 120/259'
+2025-07-06 16:33:58,814 - excel_loader - INFO - Added slide 121/259'
+2025-07-06 16:33:58,820 - excel_loader - INFO - Added slide 122/259'
+2025-07-06 16:33:58,825 - excel_loader - INFO - Added slide 123/259'
+2025-07-06 16:33:58,831 - excel_loader - INFO - Added slide 124/259'
+2025-07-06 16:33:58,837 - excel_loader - INFO - Added slide 125/259'
+2025-07-06 16:33:58,842 - excel_loader - INFO - Added slide 126/259'
+2025-07-06 16:33:58,848 - excel_loader - INFO - Added slide 127/259'
+2025-07-06 16:33:58,854 - excel_loader - INFO - Added slide 128/259'
+2025-07-06 16:33:58,859 - excel_loader - INFO - Added slide 129/259'
+2025-07-06 16:33:58,865 - excel_loader - INFO - Added slide 130/259'
+2025-07-06 16:33:58,871 - excel_loader - INFO - Added slide 131/259'
+2025-07-06 16:33:58,877 - excel_loader - INFO - Added slide 132/259'
+2025-07-06 16:33:58,882 - excel_loader - INFO - Added slide 133/259'
+2025-07-06 16:33:58,888 - excel_loader - INFO - Added slide 134/259'
+2025-07-06 16:33:58,894 - excel_loader - INFO - Added slide 135/259'
+2025-07-06 16:33:58,899 - excel_loader - INFO - Added slide 136/259'
+2025-07-06 16:33:58,905 - excel_loader - INFO - Added slide 137/259'
+2025-07-06 16:33:58,911 - excel_loader - INFO - Added slide 138/259'
+2025-07-06 16:33:58,916 - excel_loader - INFO - Added slide 139/259'
+2025-07-06 16:33:58,922 - excel_loader - INFO - Added slide 140/259'
+2025-07-06 16:33:58,928 - excel_loader - INFO - Added slide 141/259'
+2025-07-06 16:33:58,934 - excel_loader - INFO - Added slide 142/259'
+2025-07-06 16:33:58,939 - excel_loader - INFO - Added slide 143/259'
+2025-07-06 16:33:58,945 - excel_loader - INFO - Added slide 144/259'
+2025-07-06 16:33:58,950 - excel_loader - INFO - Added slide 145/259'
+2025-07-06 16:33:58,956 - excel_loader - INFO - Added slide 146/259'
+2025-07-06 16:33:58,962 - excel_loader - INFO - Added slide 147/259'
+2025-07-06 16:33:58,968 - excel_loader - INFO - Added slide 148/259'
+2025-07-06 16:33:58,973 - excel_loader - INFO - Added slide 149/259'
+2025-07-06 16:33:58,979 - excel_loader - INFO - Added slide 150/259'
+2025-07-06 16:33:58,985 - excel_loader - INFO - Added slide 151/259'
+2025-07-06 16:33:58,990 - excel_loader - INFO - Added slide 152/259'
+2025-07-06 16:33:58,996 - excel_loader - INFO - Added slide 153/259'
+2025-07-06 16:33:59,002 - excel_loader - INFO - Added slide 154/259'
+2025-07-06 16:33:59,008 - excel_loader - INFO - Added slide 155/259'
+2025-07-06 16:33:59,016 - excel_loader - INFO - Added slide 156/259'
+2025-07-06 16:33:59,022 - excel_loader - INFO - Added slide 157/259'
+2025-07-06 16:33:59,028 - excel_loader - INFO - Added slide 158/259'
+2025-07-06 16:33:59,034 - excel_loader - INFO - Added slide 159/259'
+2025-07-06 16:33:59,040 - excel_loader - INFO - Added slide 160/259'
+2025-07-06 16:33:59,053 - excel_loader - INFO - Added slide 161/259'
+2025-07-06 16:33:59,059 - excel_loader - INFO - Added slide 162/259'
+2025-07-06 16:33:59,064 - excel_loader - INFO - Added slide 163/259'
+2025-07-06 16:33:59,070 - excel_loader - INFO - Added slide 164/259'
+2025-07-06 16:33:59,076 - excel_loader - INFO - Added slide 165/259'
+2025-07-06 16:33:59,082 - excel_loader - INFO - Added slide 166/259'
+2025-07-06 16:33:59,090 - excel_loader - INFO - Added slide 167/259'
+2025-07-06 16:33:59,096 - excel_loader - INFO - Added slide 168/259'
+2025-07-06 16:33:59,101 - excel_loader - INFO - Added slide 169/259'
+2025-07-06 16:33:59,108 - excel_loader - INFO - Added slide 170/259'
+2025-07-06 16:33:59,114 - excel_loader - INFO - Added slide 171/259'
+2025-07-06 16:33:59,119 - excel_loader - INFO - Added slide 172/259'
+2025-07-06 16:33:59,125 - excel_loader - INFO - Added slide 173/259'
+2025-07-06 16:33:59,131 - excel_loader - INFO - Added slide 174/259'
+2025-07-06 16:33:59,137 - excel_loader - INFO - Added slide 175/259'
+2025-07-06 16:33:59,143 - excel_loader - INFO - Added slide 176/259'
+2025-07-06 16:33:59,148 - excel_loader - INFO - Added slide 177/259'
+2025-07-06 16:33:59,154 - excel_loader - INFO - Added slide 178/259'
+2025-07-06 16:33:59,160 - excel_loader - INFO - Added slide 179/259'
+2025-07-06 16:33:59,166 - excel_loader - INFO - Added slide 180/259'
+2025-07-06 16:33:59,172 - excel_loader - INFO - Added slide 181/259'
+2025-07-06 16:33:59,178 - excel_loader - INFO - Added slide 182/259'
+2025-07-06 16:33:59,184 - excel_loader - INFO - Added slide 183/259'
+2025-07-06 16:33:59,189 - excel_loader - INFO - Added slide 184/259'
+2025-07-06 16:33:59,195 - excel_loader - INFO - Added slide 185/259'
+2025-07-06 16:33:59,201 - excel_loader - INFO - Added slide 186/259'
+2025-07-06 16:33:59,207 - excel_loader - INFO - Added slide 187/259'
+2025-07-06 16:33:59,213 - excel_loader - INFO - Added slide 188/259'
+2025-07-06 16:33:59,218 - excel_loader - INFO - Added slide 189/259'
+2025-07-06 16:33:59,224 - excel_loader - INFO - Added slide 190/259'
+2025-07-06 16:33:59,230 - excel_loader - INFO - Added slide 191/259'
+2025-07-06 16:33:59,236 - excel_loader - INFO - Added slide 192/259'
+2025-07-06 16:33:59,242 - excel_loader - INFO - Added slide 193/259'
+2025-07-06 16:33:59,248 - excel_loader - INFO - Added slide 194/259'
+2025-07-06 16:33:59,254 - excel_loader - INFO - Added slide 195/259'
+2025-07-06 16:33:59,260 - excel_loader - INFO - Added slide 196/259'
+2025-07-06 16:33:59,266 - excel_loader - INFO - Added slide 197/259'
+2025-07-06 16:33:59,271 - excel_loader - INFO - Added slide 198/259'
+2025-07-06 16:33:59,278 - excel_loader - INFO - Added slide 199/259'
+2025-07-06 16:33:59,284 - excel_loader - INFO - Added slide 200/259'
+2025-07-06 16:33:59,290 - excel_loader - INFO - Added slide 201/259'
+2025-07-06 16:33:59,296 - excel_loader - INFO - Added slide 202/259'
+2025-07-06 16:33:59,301 - excel_loader - INFO - Added slide 203/259'
+2025-07-06 16:33:59,307 - excel_loader - INFO - Added slide 204/259'
+2025-07-06 16:33:59,314 - excel_loader - INFO - Added slide 205/259'
+2025-07-06 16:33:59,320 - excel_loader - INFO - Added slide 206/259'
+2025-07-06 16:33:59,327 - excel_loader - INFO - Added slide 207/259'
+2025-07-06 16:33:59,332 - excel_loader - INFO - Added slide 208/259'
+2025-07-06 16:33:59,338 - excel_loader - INFO - Added slide 209/259'
+2025-07-06 16:33:59,344 - excel_loader - INFO - Added slide 210/259'
+2025-07-06 16:33:59,350 - excel_loader - INFO - Added slide 211/259'
+2025-07-06 16:33:59,356 - excel_loader - INFO - Added slide 212/259'
+2025-07-06 16:33:59,363 - excel_loader - INFO - Added slide 213/259'
+2025-07-06 16:33:59,369 - excel_loader - INFO - Added slide 214/259'
+2025-07-06 16:33:59,375 - excel_loader - INFO - Added slide 215/259'
+2025-07-06 16:33:59,381 - excel_loader - INFO - Added slide 216/259'
+2025-07-06 16:33:59,387 - excel_loader - INFO - Added slide 217/259'
+2025-07-06 16:33:59,393 - excel_loader - INFO - Added slide 218/259'
+2025-07-06 16:33:59,399 - excel_loader - INFO - Added slide 219/259'
+2025-07-06 16:33:59,405 - excel_loader - INFO - Added slide 220/259'
+2025-07-06 16:33:59,411 - excel_loader - INFO - Added slide 221/259'
+2025-07-06 16:33:59,417 - excel_loader - INFO - Added slide 222/259'
+2025-07-06 16:33:59,423 - excel_loader - INFO - Added slide 223/259'
+2025-07-06 16:33:59,429 - excel_loader - INFO - Added slide 224/259'
+2025-07-06 16:33:59,435 - excel_loader - INFO - Added slide 225/259'
+2025-07-06 16:33:59,441 - excel_loader - INFO - Added slide 226/259'
+2025-07-06 16:33:59,447 - excel_loader - INFO - Added slide 227/259'
+2025-07-06 16:33:59,453 - excel_loader - INFO - Added slide 228/259'
+2025-07-06 16:33:59,459 - excel_loader - INFO - Added slide 229/259'
+2025-07-06 16:33:59,486 - excel_loader - INFO - Added slide 230/259'
+2025-07-06 16:33:59,493 - excel_loader - INFO - Added slide 231/259'
+2025-07-06 16:33:59,499 - excel_loader - INFO - Added slide 232/259'
+2025-07-06 16:33:59,504 - excel_loader - INFO - Added slide 233/259'
+2025-07-06 16:33:59,510 - excel_loader - INFO - Added slide 234/259'
+2025-07-06 16:33:59,516 - excel_loader - INFO - Added slide 235/259'
+2025-07-06 16:33:59,522 - excel_loader - INFO - Added slide 236/259'
+2025-07-06 16:33:59,528 - excel_loader - INFO - Added slide 237/259'
+2025-07-06 16:33:59,535 - excel_loader - INFO - Added slide 238/259'
+2025-07-06 16:33:59,541 - excel_loader - INFO - Added slide 239/259'
+2025-07-06 16:33:59,547 - excel_loader - INFO - Added slide 240/259'
+2025-07-06 16:33:59,553 - excel_loader - INFO - Added slide 241/259'
+2025-07-06 16:33:59,559 - excel_loader - INFO - Added slide 242/259'
+2025-07-06 16:33:59,565 - excel_loader - INFO - Added slide 243/259'
+2025-07-06 16:33:59,571 - excel_loader - INFO - Added slide 244/259'
+2025-07-06 16:33:59,577 - excel_loader - INFO - Added slide 245/259'
+2025-07-06 16:33:59,583 - excel_loader - INFO - Added slide 246/259'
+2025-07-06 16:33:59,589 - excel_loader - INFO - Added slide 247/259'
+2025-07-06 16:33:59,595 - excel_loader - INFO - Added slide 248/259'
+2025-07-06 16:33:59,601 - excel_loader - INFO - Added slide 249/259'
+2025-07-06 16:33:59,607 - excel_loader - INFO - Added slide 250/259'
+2025-07-06 16:33:59,613 - excel_loader - INFO - Added slide 251/259'
+2025-07-06 16:33:59,619 - excel_loader - INFO - Added slide 252/259'
+2025-07-06 16:33:59,625 - excel_loader - INFO - Added slide 253/259'
+2025-07-06 16:33:59,631 - excel_loader - INFO - Added slide 254/259'
+2025-07-06 16:33:59,637 - excel_loader - INFO - Added slide 255/259'
+2025-07-06 16:33:59,643 - excel_loader - INFO - Added slide 256/259'
+2025-07-06 16:33:59,649 - excel_loader - INFO - Added slide 257/259'
+2025-07-06 16:33:59,655 - excel_loader - INFO - Added slide 258/259'
+2025-07-06 16:33:59,661 - excel_loader - INFO - Added slide 259/259'
+2025-07-06 16:33:59,882 - excel_loader - INFO - Successfully exported DataFrame to 'words_data.pptx' with 259 slides.
+2025-07-06 16:33:59,882 - __main__ - INFO - Exported to Pptx file: words_data.pptx.
+2025-07-06 16:34:01,051 - __main__ - INFO - 
 --- Listing All Flashcards ---
-2025-07-06 13:10:43,198 - __main__ - INFO - Listed 1033 flashcards.
-2025-07-06 13:10:48,080 - __main__ - INFO - Program state saved successfully to 'flashcards_state.json'.
-2025-07-06 13:10:48,081 - __main__ - INFO - Flashcard program exited.
+2025-07-06 16:34:01,064 - __main__ - INFO - Listed 1033 flashcards.
+2025-07-06 16:34:10,695 - __main__ - INFO - 
+--- Starting Review Session 1 ---
+2025-07-06 16:34:10,696 - __main__ - INFO - Reviewing 1033 cards.
+2025-07-06 16:34:28,007 - __main__ - INFO - Card '(measure word)' (ID: 1) skipped.
+2025-07-06 16:34:48,892 - __main__ - INFO - Card 'a while' (ID: 2) skipped.

@@ -21,13 +21,6 @@ file_handler.setFormatter(formatter)
 # Add the file handler to the logger
 logger.addHandler(file_handler)
 
-# IMPORTANT: The console handler is removed from here to stop console logging
-# console_handler = logging.StreamHandler(sys.stdout)
-# console_handler.setLevel(logging.INFO)
-# console_handler.setFormatter(formatter)
-# logger.addHandler(console_handler)
-
-
 def load_excel_file(file_name):
     """
     Loads an XLSX Excel file into a pandas DataFrame.
@@ -41,9 +34,10 @@ def load_excel_file(file_name):
     try:
         df = pd.read_excel(file_name)
         logger.info(f"Successfully loaded '{file_name}' into a DataFrame.")
-        logger.info("--- First 5 rows of the DataFrame ---")
-        logger.info("\n" + df.head().to_markdown(index=False, numalign="left", stralign="left")) # Log DataFrame head
-
+        logger.info("--- First 3 rows of the DataFrame ---")
+        # --- MODIFIED LINE HERE ---
+        logger.info("\n" + df.head(3).to_markdown(index=False, numalign="left", stralign="left")) # Log DataFrame head with first 3 rows
+        # --- END MODIFIED LINE ---
         logger.info("--- DataFrame Information (Columns and Data Types) ---")
         # Use a StringIO object to capture df.info() output
         buffer = StringIO()
@@ -58,4 +52,3 @@ def load_excel_file(file_name):
     except Exception as e:
         logger.error(f"An error occurred while loading the Excel file: {e}", exc_info=True) # exc_info=True to log traceback
         return None
-

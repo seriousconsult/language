@@ -12,6 +12,7 @@ import math # Import math for ceil function
 # This assumes excel_loader.py is configured and its logger is accessible
 try:
     from excel_loader import logger
+    
 except ImportError:
     # Fallback logger configuration if excel_loader is not available
     logging.basicConfig(level=logging.INFO,
@@ -61,7 +62,7 @@ def export_dataframe_to_pptx(dataframe, pptx_file_name, slide_title="Data Table"
             # Set the slide title
             title = slide.shapes.title
             title.text = f"{slide_title} (Page {i+1})"
-            logger.info(f"Added slide {i+1}/{num_slides} with title: '{title.text}'")
+            logger.info(f"Added slide {i+1}/{num_slides}'")
 
             # Add a table to the slide
             rows_in_current_chunk, cols = display_dataframe.shape
@@ -124,7 +125,6 @@ def export_dataframe_to_pptx(dataframe, pptx_file_name, slide_title="Data Table"
             page_num_text_frame.paragraphs[0].font.color.rgb = RGBColor(128, 128, 128) # Grey color
             page_num_shape.fill.background() # Make background transparent
             page_num_shape.line.fill.background() # Make border transparent
-            logger.info(f"Added page number {i+1} to slide {i+1}.")
 
 
         # Save the presentation

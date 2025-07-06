@@ -3,13 +3,11 @@ import sys
 import pandas as pd
 import logging
 from io import StringIO
-from excel_loader import load_excel_file
 import json
 
-# --- Configuration Constants ---
-EXCEL_DATA_FILE = 'words.xlsx' # Your Excel file name (initial load only)
-DATA_FILE = 'flashcards_state.json' # Where your program state (cards + session) will be saved
+
 LOG_FILE = 'lang.log' # Log file name
+
 
 SESSION_INTERVALS = {
     'New': 0,
@@ -31,7 +29,8 @@ logger.addHandler(file_handler)
 
 # --- Flashcard Class ---
 class Flashcard:
-    def __init__(self, english, chinese, pinyin, state='New', last_reviewed_session=0, original_index=None):
+    def __init__(id, self, english, chinese, pinyin, state='New', last_reviewed_session=0, original_index=None):
+        self.id=id
         self.english = english
         self.chinese = chinese
         self.pinyin = pinyin
@@ -40,12 +39,13 @@ class Flashcard:
         self.original_index = original_index # To track the row in the DataFrame (relevant during initial load)
 
     def __repr__(self):
-        return (f"Flashcard(English='{self.english}', Chinese='{self.chinese}', Pinyin='{self.pinyin}', "
+        return (f"Flashcard(id='{self.id}',English='{self.english}', Chinese='{self.chinese}', Pinyin='{self.pinyin}', "
                 f"State='{self.state}', LastSession={self.last_reviewed_session}, OriginalIndex={self.original_index})")
 
     def to_dict(self):
         """Converts the Flashcard object to a dictionary for JSON serialization."""
         return {
+            'id':self.id,
             'english': self.english,
             'chinese': self.chinese,
             'pinyin': self.pinyin,
@@ -58,6 +58,7 @@ class Flashcard:
     def from_dict(data):
         """Creates a Flashcard object from a dictionary (for loading from JSON)."""
         return Flashcard(
+            id=data['id'],
             english=data['english'],
             chinese=data['chinese'],
             pinyin=data['pinyin'],
@@ -70,6 +71,7 @@ class Flashcard:
     def from_dataframe_row(row, index):
         """Creates a Flashcard object from a pandas DataFrame row (for initial Excel load)."""
         return Flashcard(
+            id=data['id'],
             english=row.get('English', ''),
             chinese=row.get('Chinese', ''),
             pinyin=row.get('Pinyin', ''),
@@ -119,7 +121,7 @@ def load_excel_initial_data(file_name):
     """
     try:
         df = pd.read_excel(file_name)
-        logger.info(f"Successfully loaded initial vocabulary from '{file_name}'.")
+        logger.info(f"Successfully loaded initial words from '{file_name}'.")
 
         # Ensure 'State' and 'LastReviewedSession' columns exist for new cards
         if 'State' not in df.columns:
@@ -131,10 +133,10 @@ def load_excel_initial_data(file_name):
 
     except FileNotFoundError:
         logger.error(f"Initial Excel file '{file_name}' not found. Please create it or add cards manually.", exc_info=False)
-        return pd.DataFrame(columns=['English', 'Chinese', 'Pinyin', 'State', 'LastReviewedSession']) # Return empty DataFrame
+        return pd.DataFrame(columns=['id','English', 'Chinese', 'Pinyin', 'State', 'LastReviewedSession']) # Return empty DataFrame
     except Exception as e:
         logger.error(f"An error occurred while loading initial Excel file: {e}", exc_info=True)
-        return pd.DataFrame(columns=['English', 'Chinese', 'Pinyin', 'State', 'LastReviewedSession']) # Return empty DataFrame
+        return pd.DataFrame(columns=['id','English', 'Chinese', 'Pinyin', 'State', 'LastReviewedSession']) # Return empty DataFrame
 
 
 def load_program_state():
@@ -179,11 +181,6 @@ def save_program_state(cards, current_session):
     except IOError as e:
         logger.error(f"Error saving program state to '{DATA_FILE}': {e}", exc_info=True)
 
-
-# --- Main Program Logic ---
-# The add_new_card function is now removed as it's no longer a menu option.
-# If you wanted to re-introduce adding cards, it would be by editing flashcards.xlsx
-
 def review_session(cards, current_session_num):
     """Conducts a review session based on card states."""
     logger.info(f"\n--- Starting Review Session {current_session_num} ---")
@@ -207,6 +204,7 @@ def review_session(cards, current_session_num):
     for i, card in enumerate(cards_to_review):
         print(f"\n--- Card {i + 1}/{len(cards_to_review)} ---")
         print(f"Current State: {card.state}")
+        print(f"id: {card.id}")
         print(f"English: {card.english}")
         input("Press Enter to reveal Chinese/Pinyin...")
         print(f"Chinese: {card.chinese}")
@@ -233,54 +231,3 @@ def review_session(cards, current_session_num):
 
     print("\n--- Review Session Ended ---")
     logger.info("Review session ended.")
-
-def list_all_cards(cards):
-    """Prints a list of all flashcards and their current states."""
-    logger.info("\n--- Listing All Flashcards ---")
-    print("\n--- All Flashcards ---")
-    if not cards:
-        print("No flashcards added yet.")
-        logger.info("No flashcards to list.")
-        return
-
-    sorted_cards = sorted(cards, key=lambda c: c.english.lower())
-
-    for card in sorted_cards:
-        print(f"'{card.english}' -> '{card.chinese}' ({card.pinyin}) | State: {card.state} | Last Reviewed Session: {card.last_reviewed_session} | Next Review: Session {card.get_next_review_session()}")
-    print("----------------------")
-    logger.info(f"Listed {len(cards)} flashcards.")
-
-def main():
-    cards, current_session = load_program_state()
-
-    while True:
-        print("\n--- Flashcard Program Menu ---")
-        print(f"Current Session Number: {current_session}")
-        print("1. Start Review Session")
-        # Option 2 (Add New Flashcard) removed
-        print("2. List All Cards") # Now option 2
-        print("3. Increment Session Number (without review)") # Now option 3
-        print("4. Exit") # Now option 4
-        choice = input("Enter your choice: ").strip()
-
-        if choice == '1':
-            current_session += 1
-            review_session(cards, current_session)
-            save_program_state(cards, current_session)
-        elif choice == '2': # This was '3' before
-            list_all_cards(cards)
-        elif choice == '3': # This was '4' before
-            current_session += 1
-            print(f"Session number incremented to {current_session}.")
-            save_program_state(cards, current_session)
-        elif choice == '4': # This was '5' before
-            save_program_state(cards, current_session)
-            print("Exiting Flashcard Program. Goodbye!")
-            logger.info("Flashcard program exited.")
-            break
-        else:
-            print("Invalid choice. Please try again.")
-            logger.warning(f"Invalid menu choice: {choice}")
-
-if __name__ == "__main__":
-    main()
